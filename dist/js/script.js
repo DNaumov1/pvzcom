@@ -7,9 +7,3 @@ menuBtn.addEventListener('click', function(){
 	menu.classList.toggle('active');
     report.classList.toggle('disable');
 });
-
-function clickHamburger() {
-    menuBtn.classList.toggle('active');
-	menu.classList.toggle('active');
-    report.classList.toggle('disable');
-}
