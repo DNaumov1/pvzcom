@@ -60,6 +60,10 @@ header .header__logo .mobile {
   }
 }
 
+header .header__logo .mobile.active {
+  position: fixed;
+}
+
 header .header__logo .desktop {
   display: block;
 }
@@ -215,12 +219,14 @@ header .header__links .menu-btn.active span:nth-of-type(2) {
   top: 50%;
   -webkit-transform: translate(-50%, 0%) rotate(45deg);
           transform: translate(-50%, 0%) rotate(45deg);
+  position: fixed;
 }
 
 header .header__links .menu-btn.active span:nth-of-type(3) {
   top: 50%;
   -webkit-transform: translate(-50%, 0%) rotate(-45deg);
           transform: translate(-50%, 0%) rotate(-45deg);
+  position: fixed;
 }
 
 .main {

@@ -50,6 +50,10 @@ header {
             }
         }
 
+        .mobile.active {
+            position: fixed;
+        }
+
         .desktop {
             display: block;
 
@@ -173,11 +177,14 @@ header {
         .menu-btn.active span:nth-of-type(2) {
             top: 50%;
             transform: translate(-50%, 0%) rotate(45deg);  
+
+            position: fixed;
         }
 
         .menu-btn.active span:nth-of-type(3) {
             top: 50%;
             transform: translate(-50%, 0%) rotate(-45deg); 
+            position: fixed;
         }
     }
 }
