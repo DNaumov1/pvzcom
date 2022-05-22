@@ -24,11 +24,35 @@ header {
     display: flex;
     margin-top: 3.75em;
 
+    @media only screen and (max-width: 420px) {
+        margin-top: 0.75em;
+    } 
+    
     .header__logo {
         margin-left: 9em;
 
         @media only screen and (max-width: 769px) {
             margin-left: 3.25em;
+        }
+
+        @media only screen and (max-width: 420px) {
+            margin-left: 0;
+        }
+
+        .mobile {
+            display: none;
+
+            @media only screen and (max-width: 420px) {
+                display: block;
+            }
+        }
+
+        .desktop {
+            display: block;
+
+            @media only screen and (max-width: 420px) {
+                display: none;
+            }
         }
     }
 
@@ -41,10 +65,18 @@ header {
         justify-content: flex-end;
         align-items: center;
 
-        margin-right: 9.375em;
+        margin-right: 9em;
+
+        @media only screen and (max-width: 420px) {
+            margin-right: 1.625em;
+        }
 
         .nav {
             display: flex;
+
+            @media only screen and (max-width: 420px) {
+                display: none;
+            }
         }
 
         .nav__link a {
@@ -56,6 +88,73 @@ header {
         .nav__link:nth-child(2),
         .nav__link:nth-child(3), {
             margin-right: 3.3125em;
+        }
+
+        .menu-btn {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index:2;
+            overflow: hidden;
+            display: none;
+
+            @media screen and (max-width: 420px) {
+                display: flex; 
+            }
+        }
+
+        .menu-btn span {
+            width: 30px;
+            height: 3px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            transition: all 0.5s;
+
+            border-radius: 2px;
+        }
+
+        .menu-btn span:nth-of-type(2) {
+            top: calc(50% - 8px);
+        }
+        .menu-btn span:nth-of-type(3) {
+            top: calc(50% + 8px);
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            background: linear-gradient(115.98deg, #5B52ED 0.66%, #953FE2 33.64%, #B15CFD 71.86%, #5B52ED 97.21%);
+
+            transform: translateX(-100%);
+            transition: transform 0.5s; 
+        }
+        .menu.active {
+            transform: translateX(0);
+        }
+        .menu li {
+            list-style-type: none;
+        }
+
+        /* Меняем гамбургер иконку, когда меню открыто */
+        .menu-btn.active span:nth-of-type(1) {
+            display: none;
+        }
+
+        .menu-btn.active span:nth-of-type(2) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(45deg);  
+        }
+
+        .menu-btn.active span:nth-of-type(3) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(-45deg); 
         }
     }
 }
@@ -72,7 +171,13 @@ header {
 
     @media only screen and (max-width: 769px) {
         background: url("/dist/img/main_bg.png") no-repeat 50% 600%;
-        height: 90vh;
+        height: 100vh;
+    }
+
+    @media only screen and (max-width: 420px) {
+        background: url("/dist/img/main_bg.png") no-repeat 90% 70%;
+        background-size: 140%;
+        height: 100vh;
     }
     
     .main__title {
@@ -81,6 +186,10 @@ header {
 
         @media only screen and (max-width: 769px) {
             padding-left: 3.25em;
+        }
+
+        @media only screen and (max-width: 420px) {
+            padding-left: 0.625em;
         }
 
         h1 {
@@ -92,6 +201,11 @@ header {
             margin-top: 0.9375em;
             font-size: 1.375rem;
             font-weight: 400;
+
+            @media only screen and (max-width: 420px) {
+                width: 232px;
+                font-weight: 300;
+            }
         }
     }
 
@@ -103,6 +217,12 @@ header {
             padding-left: 3.25em;
         }
 
+        @media only screen and (max-width: 420px) {
+            padding-left: 0.625em;
+            margin-top: 0;
+            padding-top: 17.5625em;
+        }
+
 
         .benefits_list {
             display: flex;
@@ -110,6 +230,10 @@ header {
 
             .left {
                 margin-left: 25px;
+
+                @media only screen and (max-width: 420px) {
+                    margin-left: 0;
+                }
             }
         }
         
@@ -139,7 +263,7 @@ header {
         width: 100%;
         height: 200px;
         top: 79.2vh;
-        
+
         @media only screen and (max-width: 1001px) {
             padding-left: 9.375em;
         }
@@ -147,6 +271,10 @@ header {
 
         @media only screen and (max-width: 769px) {
             padding-left: 3.25em;
+        }
+
+        @media only screen and (max-width: 420px) {
+            padding-left: 0;
         }
 
         .figure {
@@ -167,7 +295,7 @@ header {
                 margin-top: 1.5625em;
 
                 @media only screen and (max-width: 769px) {
-                    margin-left: 3.05em;
+                    
                 }
 
                 display: none;
@@ -203,6 +331,11 @@ header {
             @media only screen and (max-width: 1001px) {
                 border: 0;
             }
+
+            @media only screen and (max-width: 420px) {
+                display: flex;
+                justify-content: center;
+            }
         }
 
         @media only screen and (max-width: 1001px) {
@@ -220,11 +353,20 @@ header {
     @media only screen and (max-width: 769px) {
         padding-left: 3.25em;
     }
+
+    @media only screen and (max-width: 420px) {
+        padding-left: 0.625em;
+    }
     
     background: #fff;
     .section_top {
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: 420px) {
+            flex-wrap: wrap;
+            padding-top: 5.3125em;
+        }
 
         img {
             @media only screen and (max-width: 1001px) {
@@ -241,6 +383,10 @@ header {
         .section_title {
             color: #6C54F1;
             width: 50%;
+
+            @media only screen and (max-width: 420px) {
+                width: 100%;
+            }
         
             h1 {
                 line-height: 41px;
@@ -338,6 +484,10 @@ header {
         margin: 0;
         width: 100%;
         height: 200px;
+
+        @media only screen and (max-width: 420px) {
+            height: 100px;
+        }
         
         .figure {
             border-top: 200px solid #fff;
@@ -348,6 +498,10 @@ header {
                 border-top: 200px solid #fff;
                 border-left: 0px solid transparent;
             }
+
+            @media only screen and (max-width: 420px) {
+                display: none;
+            }
         }
     }
 
@@ -356,6 +510,10 @@ header {
 
         @media only screen and (max-width: 769px) {
             padding-left: 3.25em;
+        }
+
+        @media only screen and (max-width: 420px) {
+            padding-left: 0.625em;
         }
 
         color: #fff;
@@ -388,12 +546,27 @@ header {
         display: flex;
         align-items: center;
 
+
+        @media only screen and (max-width: 420px) {
+            margin-top: 0;
+            flex-wrap: wrap;
+        }
+
         .section_title {
             width: 50%;
+
+            @media only screen and (max-width: 420px) {
+                width: 100%;
+            }
         }
 
         .img_right {
             display: flex;
+
+            @media only screen and (max-width: 420px) {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         img {
@@ -411,6 +584,10 @@ header {
         @media only screen and (max-width: 769px) {
             margin-top: 4.8125em;
             padding-left: 3.25em;
+        }
+
+        @media only screen and (max-width: 420px) {
+            padding-left: 0.625em;
         }
 
         padding-bottom: 8.4375em;
@@ -474,6 +651,10 @@ header {
         padding: 0 3.25em;
     }
 
+    @media only screen and (max-width: 420px) {
+        padding: 0;
+    }
+
     height: 100%;
     align-items: center;
     align-items: flex-start;
@@ -483,11 +664,23 @@ header {
         display: flex;
         width: 100%;
 
+        @media only screen and (max-width: 420px) {
+            flex-wrap: wrap;
+        }
+
         .img_right {
             width: 100%;
             padding-top: 11.25em;
             display: flex;
             justify-content: flex-end;
+
+            @media only screen and (max-width: 420px) {
+                justify-content: center;
+            }
+
+            @media only screen and (max-width: 420px) {
+                width: fit-content;
+            }
         }
 
         img {
@@ -496,6 +689,11 @@ header {
                 width: 310px;
                 height: 154px;
             }
+
+            @media only screen and (max-width: 420px) {
+                width: 95%;
+                height: 168px;
+            }
         }
     }
 
@@ -503,6 +701,13 @@ header {
         padding-top: 11.25em;
         width: 700px;
         
+        @media only screen and (max-width: 420px) {
+            width: 95%;
+        }
+
+        @media only screen and (max-width: 420px) {
+            padding-left: 0.625em;
+        }
 
         h1 {
             color: #6C54F1;
@@ -517,9 +722,6 @@ header {
             line-height: 179.4%;
 
             color: #4B4B4B;
-        }
-
-        @media only screen and (max-width: 1001px) {
         }
     }
 
@@ -537,9 +739,19 @@ header {
             background: linear-gradient(267.99deg, #5A52ED -1.18%, #9865FE 24.38%, #8D6AFF 58.05%, #B05CFD 99.81%);
             clip-path: polygon(0 0, 95% 0%, 100% 30%, 100% 70%, 100% 100%, 5% 100%, 0% 70%, 0% 30%);
 
-             @media only screen and (max-width: 1001px) {
+            @media only screen and (max-width: 1001px) {
                 clip-path: polygon(0 0, 95% 0%, 100% 20%, 100% 80%, 100% 100%, 5% 100%, 0% 80%, 0% 20%);
             }
+
+            @media only screen and (max-width: 420px) {
+                clip-path: none;
+                flex-direction: column;
+
+                height: 360px;
+            }
+
+            
+
 
             justify-content: center;
 
@@ -560,6 +772,11 @@ header {
                     width: 150px;
                     height: 66px;
                 }
+
+                @media only screen and (max-width: 420px) {
+                    margin-bottom: 1.25em;
+                    width: 340px;
+                }
             }
 
             .input-contact:focus {
@@ -573,6 +790,10 @@ header {
 
             .input-contact:nth-child(2) {
                 margin-left: 2em;
+
+                @media only screen and (max-width: 420px) {
+                    margin-left: 0em;
+                }
             }
 
             .button-send {
@@ -596,6 +817,11 @@ header {
                     width: 175px;
                     height: 66px;
                 }
+
+                @media only screen and (max-width: 420px) {
+                    margin-top: 1.25em;
+                    width: 296px;
+                }
             }
         }
     }
@@ -606,6 +832,10 @@ header {
 
     @media only screen and (max-width: 769px) {
         padding: 0 3.25em;
+    }
+
+    @media only screen and (max-width: 420px) {
+        padding: 0 0.625em;
     }
 
     height: 100%;

@@ -2,6 +2,7 @@
 <html lang="RU">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PVZCOM | Управление и организация ПВЗ под ключ</title>
         <link href="dist/css/main.css" rel="stylesheet"/>
     </head>
@@ -9,7 +10,11 @@
         <header class="header"/> 
             <div class="header__logo"/>
                 <a href="#">
-                    <img src="dist/img/logo.svg"/>
+                    <img class="desktop" src="dist/img/logo.svg"/>
+                </a>
+
+                <a href="#">
+                    <img class="mobile" src="dist/img/logo_small.svg"/>
                 </a>
             </div>
             <div class="header__links">
@@ -27,6 +32,21 @@
                         <a href="#">Контакты</a>
                     </li>
                 </ul>
+
+                <div class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="menu">
+                    <nav>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Решения</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </nav>
+                </div>
             </div>
         </header>
         
@@ -253,5 +273,6 @@
                 </div>
             </div>
         </footer>
+        <script src="dist/js/script.js"/>
     </body>
 </html>
