@@ -263,7 +263,7 @@ header .header__links .menu-btn.active span:nth-of-type(3) {
 
 @media only screen and (max-width: 620px) {
   .main {
-    background: url("./dist/img/main_bg.png") no-repeat 90% 70%;
+    background: url("./dist/img/bg.png") no-repeat 90% 70%;
     background-size: 140%;
   }
 }
