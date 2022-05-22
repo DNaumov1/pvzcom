@@ -166,13 +166,13 @@ header .header__links .menu {
   background: linear-gradient(115.98deg, #5B52ED 0.66%, #953FE2 33.64%, #B15CFD 71.86%, #5B52ED 97.21%);
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+}
+
+header .header__links .menu.active {
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
-}
-
-header .header__links .menu.active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -232,11 +232,6 @@ header .header__links .menu-btn.active span:nth-of-type(3) {
       -ms-flex-align: center;
           align-items: center;
   background: url("/dist/img/main_bg.png") no-repeat 100% 140%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 @media only screen and (max-width: 1001px) {
@@ -256,7 +251,14 @@ header .header__links .menu-btn.active span:nth-of-type(3) {
   .main {
     background: url("/dist/img/main_bg.png") no-repeat 90% 70%;
     background-size: 140%;
-    height: 100vh;
+    height: 105vh;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .main {
+    background: url("/dist/img/main_bg.png") no-repeat 90% 70%;
+    background-size: 140%;
   }
 }
 

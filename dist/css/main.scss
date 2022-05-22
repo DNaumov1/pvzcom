@@ -136,9 +136,9 @@ header {
             background: linear-gradient(115.98deg, #5B52ED 0.66%, #953FE2 33.64%, #B15CFD 71.86%, #5B52ED 97.21%);
 
             transform: translateX(-100%);
-            transition: transform 0.5s; 
         }
         .menu.active {
+            transition: transform 0.5s; 
             transform: translateX(0);
 
             nav {
@@ -187,8 +187,6 @@ header {
     height: 100vh;
     align-items: center;
     background: url("/dist/img/main_bg.png") no-repeat 100% 140%;
-    justify-content: center;
-    align-content: center;
 
     @media only screen and (max-width: 1001px) {
         background: url("/dist/img/main_bg.png") no-repeat 120% 260%;
@@ -202,7 +200,12 @@ header {
     @media only screen and (max-width: 420px) {
         background: url("/dist/img/main_bg.png") no-repeat 90% 70%;
         background-size: 140%;
-        height: 100vh;
+        height: 105vh;
+    }
+
+    @media only screen and (max-width: 620px) {
+        background: url("/dist/img/main_bg.png") no-repeat 90% 70%;
+        background-size: 140%;
     }
     
     .main__title {
